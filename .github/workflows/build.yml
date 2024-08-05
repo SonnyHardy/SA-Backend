@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-push-docker-image:
-    name: build-and-push
+    name: build-and-push-image
     runs-on: ubuntu-latest
     needs: database
     steps:
