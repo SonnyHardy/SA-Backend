@@ -59,7 +59,7 @@ jobs:
             mkdir -p sa-backend-database
 
       - name: copy-docker-compose-file
-        run: scp docker-compose.yml ${{ secrets.PRIVATE_KEY }} ${{ secrets.USERNAME }}@${{ secrets.HOST }}:sa-backend-database/docker-compose.yml
+        run: scp src/main/resources/docker-compose.yml ${{ secrets.PRIVATE_KEY }} ${{ secrets.USERNAME }}@${{ secrets.HOST }}:sa-backend-database/docker-compose.yml
 
       - name: database-deployment
         uses: appleboy/ssh-action@v1.0.3
