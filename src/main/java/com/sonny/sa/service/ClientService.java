@@ -53,7 +53,7 @@ public class ClientService {
 	public void modifier(int id, Client client) {
 		
 		Client clientBDD = this.lire(id);
-		if (client.getId() == client.getId()) {
+		if (clientBDD.getId() == client.getId()) {
 			clientBDD.setEmail(client.getEmail());
 			clientBDD.setTelephone(client.getTelephone());
 			this.clientRepository.save(clientBDD);
