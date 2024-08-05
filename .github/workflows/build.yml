@@ -79,5 +79,5 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd sa-backend-database
-            sudo docker-compose -f docker-compose.yml pull -q
-            sudo docker-compose -f docker-compose.yml up -d
+            docker-compose -f docker-compose.yml pull -q
+            docker-compose -f docker-compose.yml up -d
