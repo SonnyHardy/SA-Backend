@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: sonnyhardy/imc:latest
+          tags: sonnyhardy/sa-backend:latest
 
   server-deploy:
     name: server-deploy
@@ -42,12 +42,11 @@ jobs:
             sudo docker pull sonnyhardy/sa-backend:latest
             sudo docker stop sa-backend-1 || true
             sudo docker rm sa-backend-1 || true
-            sudo docker run -d --name sa-backend-1 -p 8080:8080 sonnyhardy/sa-backend:latest
+            sudo docker run -d --name sa-backend-1 -p 8081:8081 sonnyhardy/sa-backend:latest
 
   database:
     name: database-deployment
     runs-on: ubuntu-latest
-    needs: build-and-push-docker-image
     steps:
       - name: create-deployment-folder
         uses: appleboy/ssh-action@v1.0.3
